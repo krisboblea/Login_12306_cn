@@ -1,0 +1,23 @@
+    <!-- Start Notifications -->
+<foreach name="info.info" item="vo">
+    <div class="notification information png_bg"> <a href="#" class="close"><img src="__PUBLIC__/images/Manage/icons/cross_grey_small.png" title="关闭这则消息" alt="close" /></a>
+      <div>{$vo}</div>
+    </div>
+</foreach>
+<foreach name="info.att" item="vo">
+    <div class="notification attention png_bg"> <a href="#" class="close"><img src="__PUBLIC__/images/Manage/icons/cross_grey_small.png" title="关闭这则消息" alt="close" /></a>
+      <div>{$vo}</div>
+    </div>
+</foreach>
+
+<foreach name="info.success" item="vo">
+    <div class="notification success png_bg"> <a href="#" class="close"><img src="__PUBLIC__/images/Manage/icons/cross_grey_small.png" title="关闭这则消息" alt="close" /></a>
+      <div>{$vo}</div>
+    </div>
+</foreach>
+<foreach name="info.error" item="vo">
+    <div class="notification error png_bg"> <a href="#" class="close"><img src="__PUBLIC__/images/Manage/icons/cross_grey_small.png" title="关闭这则消息" alt="close" /></a>
+      <div>{$vo}</div>
+    </div>
+</foreach>
+    <!-- End Notifications -->

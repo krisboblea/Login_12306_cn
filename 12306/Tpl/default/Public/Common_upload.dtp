@@ -1,0 +1,10 @@
+<meta charset="utf-8">		<p>选择文件并上传<form METHOD=POST action="{:U('/Public/upload?path=Gx&act=common')}" target="upload_js" enctype="multipart/form-data" >
+
+
+			
+		<input type="file" name="img" id="img"/> 
+		<div style="overflow: hidden; border: 1px ;width: 200px,height:200px;"><div id="imgDiv"></div></div>
+		<input type="submit" value="上传">上次后请在最近上传中选择
+		</p>
+		</form>
+<iframe src="" name="upload_js" width="400" height="50"></iframe>

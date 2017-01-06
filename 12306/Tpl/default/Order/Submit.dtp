@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>{$web.name}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0"/>
+<link rel="stylesheet" href="__PUBLIC__/Css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
+ </head>
+ <body>
+  <div style="width:98%;margin:0 auto;">
+    <div class="content-box">
+      <div class="content-box-header">
+        <h3>12306.CN 抢票系统</h3>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+        <div class="tab-content default-tab">
+		{$msg}<br/><br/>
+		<if condition="($info.error eq 0)">
+<META HTTP-EQUIV=REFRESH CONTENT="0;URL={:U('Ok')}?user={$user}&msg={$msg}">
+，请稍等
+<elseif condition="($info.error eq 1)" />
+		<a href="{:U('Index')}?">返回登录</a><br/>
+		<a href="{:U('Quire')}?id={$id}">返回查票</a>
+
+<elseif condition="($info.error eq 3)" /><script type="text/javascript">
+<!--
+	function refreshCode(){
+		$("#code_img").attr('src','{:U('code')}?user={$user}&t='+Math.random());
+	}
+//-->
+</script><form method="post" action="{:U('Order')}?act=pcode&id={$id}">
+			<input type="text" name="code" autocomplete="off"><br>
+		<span class="hand" title="点击刷新" onclick="refreshCode()">
+		<img src="{:U('code')}?user={$user}" id="code_img" width="90" height="30"></span>
+			<input type="submit" value="提交">
+		</form>
+		<a href="{:U('Index')}?">返回登录</a><br/>
+		<a href="{:U('Quire')}?id={$id}">返回查票</a>
+
+<else />
+		<script type="text/javascript">
+		<!--
+			location.href='{:U('Order')}?id={$id}&t={:rand_string(4,0)}';
+		//-->
+		</script>
+		正在<a href="{:U('Order')}?id={$id}&t={:rand_string(4,0)}">返回</a>，继续订票
+</if>
+		<br>{:tim()}
+
+        </div>
+      </div>
+    </div>
+ </div>
+
+ </body>
+</html>

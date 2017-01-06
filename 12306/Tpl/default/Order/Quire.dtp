@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>{$web.name}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0"/>
+<link rel="stylesheet" href="__PUBLIC__/Css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
+ </head>
+ <body>
+  <div style="width:98%;margin:0 auto;">
+    <div class="content-box">
+      <div class="content-box-header">
+        <h3>12306.CN 抢票系统</h3>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+        <div class="tab-content default-tab">
+		{$msg}<br>
+		<volist name="pinfo" id="vo">
+		<b>列车 {$vo.no.1}余票信息</b>：
+		<br>软卧：{$vo.p.0}<br>硬卧：{$vo.p.1}<br>硬座：{$vo.p.3}
+		<br>data：{$vo.data.1}
+		<br>
+		</volist>
+		<eq name="info.success" value="1">
+，请稍等<br/><br/><br/>
+		<script type="text/javascript">
+		<!--
+			location.href='{:U('Order')}?id={$id}';
+		//-->
+		</script>
+		</eq>
+		<eq name="info.error" value="0">
+		<META HTTP-EQUIV=REFRESH CONTENT="20;URL=?id={$id}&t={:rand_string(4,0)}">
+		<script type="text/javascript">
+		<!--
+			setTimeout("window.location.reload();",30000);
+		//-->
+		</script>
+		余票信息不断更新中。<a href="{:U('Index')}">停止</a>
+		<else />
+		请<a href="{:U('Index')}">返回</a>
+		</eq>
+		<br>{:tim()}
+
+        </div>
+      </div>
+    </div>
+ </div>
+
+ </body>
+</html>

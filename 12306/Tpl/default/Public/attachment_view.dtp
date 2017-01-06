@@ -1,0 +1,7 @@
+<link href="__PUBLIC__/Js/swfupload/swfupload.css" rel="stylesheet" type="text/css" />
+<fieldset class="blue pad-10">
+        	<legend>最近上传列表</legend>
+        	<ul class="attachment-list">  
+		<volist name="data" id="vo"><li><div class="img-wrap">
+<a href="javascript:;" onclick="javascript:add(this,{$vo.id})"><div class="icon"></div><img src="{$vo.saved_name}" width="80" path="{$vo.saved_name}" title="{$vo.file_name}"/></a></div></li>
+</volist></ul></fieldset>

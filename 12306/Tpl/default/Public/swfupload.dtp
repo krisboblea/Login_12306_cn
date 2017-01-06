@@ -1,0 +1,56 @@
+<link href="__PUBLIC__/Js/swfupload/swfupload.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="__PUBLIC__/Js/swfupload/swfupload.js"></script>
+<script language="JavaScript" type="text/javascript" src="__PUBLIC__/Js/swfupload/handlers.js"></script>
+<script type="text/javascript">
+var swfu = '';
+		$(document).ready(function(){
+		swfu = new SWFUpload({
+			flash_url:"__PUBLIC__/Js/swfupload/swfupload.swf?"+Math.random(),
+			upload_url:"/Public/upload/",
+			file_post_name : "Filedata",
+			post_params:{"SWFUPLOADSESSID":"<?php echo session_id(); ?>","path":"Gx","filetype_post":"jpg|jpeg|gif|png|bmp"},
+			file_size_limit:"2048",
+			file_types:"*.jpg;*.jpeg;*.gif;*.png;*.bmp",
+			file_types_description:"图片文件(*.jpg;*.jpeg;*.gif;*.png;*.bmp)",
+			file_upload_limit:"1",
+			custom_settings : {progressTarget : "fsUploadProgress",cancelButtonId : "btnCancel"},
+	 
+			button_image_url: "",
+			button_width: 75,
+			button_height: 28,
+			button_placeholder_id: "buttonPlaceHolder",
+			button_text_style: "",
+			button_text_top_padding: 3,
+			button_text_left_padding: 12,
+			button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+			button_cursor: SWFUpload.CURSOR.HAND,
+
+			file_dialog_start_handler : fileDialogStart,
+			file_queued_handler : fileQueued,
+			file_queue_error_handler:fileQueueError,
+			file_dialog_complete_handler:fileDialogComplete,
+			upload_progress_handler:uploadProgress,
+			upload_error_handler:uploadError,
+			upload_success_handler:uploadSuccess,
+			upload_complete_handler:uploadComplete
+			});
+		})</script>
+
+
+
+      	<div>
+				<div class="addnew" id="addnew">
+					<span id="buttonPlaceHolder"></span>
+				</div>
+				<input type="button" id="btupload" value="开始上传" onClick="swfu.startUpload();" />
+                <div id="nameTip" class="onShow">最多上传<font color="red"> 1</font> 个附件,单文件最大 <font color="red">2 MB</font></div>
+                <div class="bk3"></div>
+				
+                <div class="lh24">支持 <font style="font-family: Arial, Helvetica, sans-serif">jpg、jpeg、gif、png、bmp</font> 格式。</div></div> 	
+    		<div class="bk10"></div>
+        	<fieldset class="blue pad-10" id="swfupload">
+        	<legend>列表</legend>
+        	<ul class="attachment-list"  id="fsUploadProgress">    
+        	</ul>
+    		</fieldset>
+    	</div>

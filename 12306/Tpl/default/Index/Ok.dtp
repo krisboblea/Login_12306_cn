@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>{$web.name}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0"/>
+<link rel="stylesheet" href="__PUBLIC__/Css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
+ </head>
+
+ <body>
+
+  <div style="width:98%;margin:0 auto;">
+    <div class="content-box">
+      <div class="content-box-header">
+        <h3>{$web.name}</h3>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+        <div class="tab-content default-tab">
+	 <include file="notice" />
+		<h3>{$msg}</h3><br>
+<h4>请按下面的方法将登录移植到浏览器（推荐IE 方便使用网银支付）:</h4>
+<h3>浏览器为IE7以上版本及Chrome浏览器（按F12有反应的）</h3>
+1、打开<a href="https://dynamic.12306.cn/otsweb/" target="ots">https://dynamic.12306.cn/otsweb/</a><br>
+2、按F12键打开“开发人员工具”，切换到“控制台”(Console)选项卡，在最下方“>>”后粘贴以下脚本并运行:
+<br>
+<b>document.cookie = "JSESSIONID={$j_id}";</b><br/>
+<b>document.cookie = "BIGipServerotsweb={$j_b}";</b><br/>
+3、关闭F12工具，点击“我的12306 ”，成功！<br/>
+可参考教程:<br><a href="__PUBLIC__/Images/jiaocheng.jpg" target=_blank" title="在新窗口查看教程"><img src="__PUBLIC__/Images/jiaocheng.jpg" height="200"></a>
+<h3>浏览器为IE7以下版本及其他浏览器（按F12没反应的）</h3>
+1、打开<a href="https://dynamic.12306.cn/otsweb/" target="ots">https://dynamic.12306.cn/otsweb/</a><br>
+2、在打开的登录页面地址栏依次输入以下每行命令并回车:
+<br>
+<b>javascript:document.cookie = "JSESSIONID={$j_id}";</b><br/>
+<b>javascript:document.cookie = "BIGipServerotsweb={$j_b}";</b><br/>
+3、再次打开<a href="https://dynamic.12306.cn/otsweb/" target="ots">https://dynamic.12306.cn/otsweb/</a>，点击“我的12306 ”，成功！
+		<br>
+		
+		
+		<a href="{:U('Index')}">返回首页<br></a>
+		<span class="hid">在线订票是热爱游戏的大学生、研究生、热爱网络的人们喜爱的工具，如同在线游戏一般</span>
+		<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8862505282163232";
+/* mfpad-3 */
+google_ad_slot = "2636450045";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<span class="hid"><script src="http://s16.cnzz.com/stat.php?id=3755524&web_id=3755524&show=pic" language="JavaScript"></script>
+		</span>
+
+        </div>
+      </div>
+    </div>
+ </div>
+
+ </body>
+</html>

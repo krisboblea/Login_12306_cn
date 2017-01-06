@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>{$web.name}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0"/>
+<link rel="stylesheet" href="__PUBLIC__/Css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
+ </head>
+ <body>
+  <div style="width:98%;margin:0 auto;">
+    <div class="content-box">
+      <div class="content-box-header">
+        <h3>{$web.name}</h3>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+        <div class="tab-content default-tab">
+		{$msg}<br>
+		<eq name="info.success" value="1">
+		<META HTTP-EQUIV=REFRESH CONTENT="0;URL={:U('Ok')}?user={$user}&msg={$msg}">
+，请稍等<br/><br/><br/>
+		<script type="text/javascript">
+		<!--
+			location.href='{:U('Ok')}?user={$user}&msg={$msg}';
+		//-->
+		</script>
+		</eq>
+		<eq name="info.error" value="0">
+		<META HTTP-EQUIV=REFRESH CONTENT="4;URL=?i={$i}&toke={$info['token'][1]}">
+		<script type="text/javascript">
+		<!--
+			setTimeout("location.href='?i={$i}&toke={$info['token'][1]}';",30*1000);
+		//-->
+		</script>
+		<a href="{:U('Index')}">停止</a>
+		<else />
+		请<a href="{:U('Index')}">返回</a>
+		</eq>
+		<br>
+
+		<span class="hid">在线订票是热爱游戏的大学生、研究生、热爱网络的人们喜爱的工具，如同在线游戏一般</span>
+		<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8862505282163232";
+/* mfpad-3 */
+google_ad_slot = "2636450045";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<span class="hid"><script src="http://s16.cnzz.com/stat.php?id=3755524&web_id=3755524&show=pic" language="JavaScript"></script>
+		</span>
+
+        </div>
+      </div>
+    </div>
+ </div>
+
+ </body>
+</html>
